@@ -8,8 +8,9 @@ class AuthFacade {
   final bool isLoaded;
 
   final Function(String, String) login;
+  final Function() logout;
 
-  AuthFacade({this.isLoaded, this.isLoading, this.login});
+  AuthFacade({this.isLoaded, this.isLoading, this.login, this.logout});
 
   static AuthFacade fromStore(Store<WithAuthState> store) {
     return AuthFacade(
@@ -21,6 +22,9 @@ class AuthFacade {
         /// Action dispatchers
         login: (String email, String password) {
           store.dispatch(LoginAction(email: email, password: password));
+        },
+        logout: () {
+          store.dispatch(LogoutAction());
         });
   }
 }
