@@ -17,6 +17,6 @@ class AppRouter {
   }
 }
 
-void registerFeature(Map<String, Widget Function(BuildContext)> routing) {
+void registerRouter(Map<String, Widget Function(BuildContext)> routing) {
   return AppRouter.register(routing);
 }
