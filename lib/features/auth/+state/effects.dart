@@ -7,6 +7,8 @@ import 'actions.dart';
 ThunkAction login(String email, String password) {
   return (Store store) async {
     new Future(() async {
+      /// TEMP
+      /// Should be fetched from `locator`
       new AuthService()
           .login(email, password)
           .then((user) => store.dispatch(LoginSuccessAction(user: user)))
