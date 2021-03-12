@@ -9,7 +9,7 @@ class AuthService implements AuthProvider {
   }
 
   @override
-  Future<UserAuth> login() {
+  Future<UserAuth> login(String email, String password) {
     // TODO: implement login
     throw UnimplementedError();
   }

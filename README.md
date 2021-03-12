@@ -31,6 +31,8 @@ Shared UI concerns and declarations. Shared UI libraries are located at `libs/ui
 
 #### Layouts
 
+> TODO
+
 #### Theme
 
 | Path                | Description                    |
@@ -40,6 +42,8 @@ Shared UI concerns and declarations. Shared UI libraries are located at `libs/ui
 | `theme/theme.dart`  | Theme data.                    |
 
 #### Widgets
+
+> TODO
 
 ### Features
 
@@ -53,6 +57,13 @@ All features are kept in the `lib/features` directory.
 | `{feature}/+state/*`              | Supplementary state for this feature, if required. | [:link:](#feature-state)   |
 
 #### Feature Routing
+
+If page routing is required, the feature directory will need a router.
+Feature routers are of type `Map<String, Widget Function(BuildContext)>`, mapping routes to widget builders. All routes should be prefixed with `'/'`, eg. `/home`.
+
+| Path                    | Description                         |
+| ----------------------- | ----------------------------------- |
+| `{feature}_router.dart` | Naming scheme for a feature router. |
 
 #### Feature Pages
 
@@ -74,7 +85,27 @@ All state related logic for a feature is located at `lib/features/{feature}/+sta
 | `model.dart`   | Store state models for this feature.   |
 | `reducer.dart` | Store reducer declarations.            |
 
-#### Register Feature State
+##### State Models
+
+> TODO
+
+##### State Actions
+
+> TODO
+
+##### State Reducer
+
+> TODO
+
+##### State Facade
+
+> TODO
+
+##### State Effects
+
+> TODO
+
+#### Adding Feature State
 
 > The following assumes a feature named `MyFeature`.
 
@@ -123,7 +154,7 @@ class AppState with MyFeatureStateKey {
 }
 ```
 
-#### Register Feature Routing
+#### Adding Feature Routing
 
 > The following assumes an app named `MyApp` and a feature named `MyFeature`.
 
