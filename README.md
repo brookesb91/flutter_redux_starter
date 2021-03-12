@@ -1,4 +1,4 @@
-# flutter_redux_starter
+# Flutter Redux Starter
 
 A starter project using Redux state management.
 
@@ -11,8 +11,8 @@ A starter project using Redux state management.
 | `lib/locator.dart`    | Dependency set-up.               |
 | `lib/app_state.dart`  | App state model.                 |
 | `lib/app_router.dart` | App page routing.                |
-| `lib/features/*`      | App features.                    |
-| `lib/ui/*`            | Shared UI.                       |
+| `lib/features/*`      | [App features](#features).       |
+| `lib/ui/*`            | [Shared UI](#shared-ui).         |
 | `assets/*`            | Assets directory.                |
 | `android/*`           | Android platform assets.         |
 | `ios/*`               | iOS platform assets.             |
@@ -21,11 +21,13 @@ A starter project using Redux state management.
 
 ### Shared UI
 
-| Path        | Description           |
-| ----------- | --------------------- |
-| `layouts/*` | Shared layout widgets |
-| `theme/*`   | Theme declarations    |
-| `widgets/*` | Shared widgets        |
+Shared UI concerns and declarations. Shared UI libraries are located at `libs/ui`.
+
+| Path        | Description                       |
+| ----------- | --------------------------------- |
+| `layouts/*` | [Shared layout widgets](#layouts) |
+| `theme/*`   | [Theme declarations](#theme)      |
+| `widgets/*` | [Shared widgets](#widgets)        |
 
 #### Layouts
 
@@ -35,7 +37,7 @@ A starter project using Redux state management.
 | ------------------- | ------------------------------ |
 | `theme/colors.dart` | Theme color declarations.      |
 | `theme/text.dart`   | Theme text style declarations. |
-| `theme/theme.dart`  | Theme data                     |
+| `theme/theme.dart`  | Theme data.                    |
 
 #### Widgets
 
@@ -43,30 +45,36 @@ A starter project using Redux state management.
 
 All features are kept in the `lib/features` directory.
 
-| Path                              | Description                                        |
-| --------------------------------- | -------------------------------------------------- |
-| `{feature}/{feature}_router.dart` | Feature page routing, if required.                 |
-| `{feature}/pages/*`               | Pages for this feature, if any.                    |
-| `{feature}/services/*`            | Services for this feature, if any.                 |
-| `{feature}/+state/*`              | Supplementary state for this feature, if required. |
+| Path                              | Description                                                          |
+| --------------------------------- | -------------------------------------------------------------------- |
+| `{feature}/{feature}_router.dart` | [Feature page routing, if required.](#feature-routing)               |
+| `{feature}/pages/*`               | [Pages for this feature, if any.](#feature-pages)                    |
+| `{feature}/services/*`            | Services for this feature, if any.                                   |
+| `{feature}/+state/*`              | [Supplementary state for this feature, if required.](#feature-state) |
 
-#### Feature pages
+#### Feature Routing
 
-| Path                               | Description                      |
-| ---------------------------------- | -------------------------------- |
-| `{feature}/pages/{name}_page.dart` | Naming scheme for feature pages. |
+#### Feature Pages
 
-#### Feature state
+Feature pages are located at `lib/features/{feature}/pages`.
 
-| Path                            | Description                            |
-| ------------------------------- | -------------------------------------- |
-| `{feature}/+state/actions.dart` | Store dispatched actions declarations. |
-| `{feature}/+state/effects.dart` | Store side-effect declarations.        |
-| `{feature}/+state/facade.dart`  | Store facade declaration.              |
-| `{feature}/+state/model.dart`   | Store state models for this feature.   |
-| `{feature}/+state/reducer.dart` | Store reducer declarations.            |
+| Path               | Description                      |
+| ------------------ | -------------------------------- |
+| `{name}_page.dart` | Naming scheme for feature pages. |
 
-#### Register feature state
+#### Feature State
+
+All state related logic for a feature is located at `lib/features/{feature}/+state`.
+
+| Path           | Description                            |
+| -------------- | -------------------------------------- |
+| `actions.dart` | Store dispatched actions declarations. |
+| `effects.dart` | Store side-effect declarations.        |
+| `facade.dart`  | Store facade declaration.              |
+| `model.dart`   | Store state models for this feature.   |
+| `reducer.dart` | Store reducer declarations.            |
+
+#### Register Feature State
 
 > The following assumes a feature named `MyFeature`.
 
@@ -115,7 +123,7 @@ class AppState with MyFeatureStateKey {
 }
 ```
 
-#### Register feature routing
+#### Register Feature Routing
 
 > The following assumes an app named `MyApp` and a feature named `MyFeature`.
 
