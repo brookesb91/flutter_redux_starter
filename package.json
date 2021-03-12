@@ -1,0 +1,24 @@
+{
+  "name": "flutter_redux_starter",
+  "version": "1.0.0",
+  "description": "A starter project using Redux state management.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brookesb91/flutter_redux_starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brookesb91/flutter_redux_starter/issues"
+  },
+  "homepage": "https://github.com/brookesb91/flutter_redux_starter#readme"
+}
