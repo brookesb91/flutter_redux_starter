@@ -41,6 +41,8 @@ A starter project using Redux state management.
 
 ### Features
 
+All features are kept in the `lib/features` directory.
+
 | Path                              | Description                                        |
 | --------------------------------- | -------------------------------------------------- |
 | `{feature}/{feature}_router.dart` | Feature page routing, if required.                 |
@@ -85,11 +87,31 @@ A starter project using Redux state management.
 class AppState with MyFeatureStateKey {
   /// Declare the feature state property.
   final MyFeatureState myFeatureState;
+  final bool isLoading;
 
   AppState({
     /// Include requirement in constructor.
-    @required this.myFeatureState
+    @required this.myFeatureState,
+    this.isLoading
   });
+
+  /// Include in state copy method
+  AppState copyWith({MyFeatureState myFeatureState, bool isLoading}) {
+    return AppState(
+      myFeatureState: myFeatureState ?? this.myFeatureState,
+      isLoading: isLoading ?? this.isLoading);
+  }
+
+  /// Include is hashCode
+  @override
+  int get hashCode =>
+    isLoading.hashCode ^ myFeatureState.hashCode;
+
+  /// Include in equality comparison
+  @override
+  bool operator ==(Object other) =>
+    identical(this, other) ||
+    other is AppState && myFeatureState == other.myFeatureState;
 }
 ```
 
@@ -97,7 +119,7 @@ class AppState with MyFeatureStateKey {
 
 > The following assumes an app named `MyApp` and a feature named `MyFeature`.
 
-1. Import the feature router into `app.dart`. eg. `import 'features/{feature}/{feature}_router.dart`
+1. Import the feature router into `app.dart`.
 
 2. In the app constructor, call `registerRouter([router])` to register the feature router.
 
