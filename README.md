@@ -4,30 +4,30 @@ A starter project using Redux state management.
 
 ## Project Structure
 
-| Path                  | Description                      |
-| --------------------- | -------------------------------- |
-| `lib/main.dart`       | Main entry file.                 |
-| `lib/app.dart`        | App declarations and entry file. |
-| `lib/locator.dart`    | Dependency set-up.               |
-| `lib/app_state.dart`  | App state model.                 |
-| `lib/app_router.dart` | App page routing.                |
-| `lib/features/*`      | [App features](#features).       |
-| `lib/ui/*`            | [Shared UI](#shared-ui).         |
-| `assets/*`            | Assets directory.                |
-| `android/*`           | Android platform assets.         |
-| `ios/*`               | iOS platform assets.             |
-| `web/*`               | Web platform assets.             |
-| `test/*`              | Tests.                           |
+| Path                  | Description                      |                      |
+| --------------------- | -------------------------------- | -------------------- |
+| `lib/main.dart`       | Main entry file.                 |                      |
+| `lib/app.dart`        | App declarations and entry file. |                      |
+| `lib/locator.dart`    | Dependency set-up.               |                      |
+| `lib/app_state.dart`  | App state model.                 |                      |
+| `lib/app_router.dart` | App page routing.                |                      |
+| `lib/features/*`      | App features.                    | [:link:](#features)  |
+| `lib/ui/*`            | Shared UI.                       | [:link:](#shared-ui) |
+| `assets/*`            | Assets directory.                |                      |
+| `android/*`           | Android platform assets.         |                      |
+| `ios/*`               | iOS platform assets.             |                      |
+| `web/*`               | Web platform assets.             |                      |
+| `test/*`              | Tests.                           |                      |
 
 ### Shared UI
 
 Shared UI concerns and declarations. Shared UI libraries are located at `libs/ui`.
 
-| Path        | Description                       |
-| ----------- | --------------------------------- |
-| `layouts/*` | [Shared layout widgets](#layouts) |
-| `theme/*`   | [Theme declarations](#theme)      |
-| `widgets/*` | [Shared widgets](#widgets)        |
+| Path        | Description           |                    |
+| ----------- | --------------------- | ------------------ |
+| `layouts/*` | Shared layout widgets | [:link:](#layouts) |
+| `theme/*`   | Theme declarations    | [:link:](#theme)   |
+| `widgets/*` | Shared widgets        | [:link:](#widgets) |
 
 #### Layouts
 
@@ -45,12 +45,12 @@ Shared UI concerns and declarations. Shared UI libraries are located at `libs/ui
 
 All features are kept in the `lib/features` directory.
 
-| Path                              | Description                                                          |
-| --------------------------------- | -------------------------------------------------------------------- |
-| `{feature}/{feature}_router.dart` | [Feature page routing, if required.](#feature-routing)               |
-| `{feature}/pages/*`               | [Pages for this feature, if any.](#feature-pages)                    |
-| `{feature}/services/*`            | Services for this feature, if any.                                   |
-| `{feature}/+state/*`              | [Supplementary state for this feature, if required.](#feature-state) |
+| Path                              | Description                                        |                            |
+| --------------------------------- | -------------------------------------------------- | -------------------------- |
+| `{feature}/{feature}_router.dart` | Feature page routing, if required.                 | [:link:](#feature-routing) |
+| `{feature}/pages/*`               | Pages for this feature, if any.                    | [:link:](#feature-pages)   |
+| `{feature}/services/*`            | Services for this feature, if any.                 |                            |
+| `{feature}/+state/*`              | Supplementary state for this feature, if required. | [:link:](#feature-state)   |
 
 #### Feature Routing
 
