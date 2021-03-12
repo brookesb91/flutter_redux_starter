@@ -7,7 +7,7 @@ import '../+state/model.dart';
 abstract class AuthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new StoreConnector<WithAuthState, AuthFacade>(
+    return new StoreConnector<AuthStateKey, AuthFacade>(
         converter: AuthFacade.fromStore, builder: buildContent);
   }
 

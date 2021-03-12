@@ -12,7 +12,7 @@ class AuthFacade {
 
   AuthFacade({this.isLoaded, this.isLoading, this.login, this.logout});
 
-  static AuthFacade fromStore(Store<WithAuthState> store) {
+  static AuthFacade fromStore(Store<AuthStateKey> store) {
     return AuthFacade(
 
         /// State selectors

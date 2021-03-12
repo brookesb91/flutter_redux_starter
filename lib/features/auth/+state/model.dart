@@ -1,4 +1,4 @@
-abstract class WithAuthState {
+mixin AuthStateKey {
   AuthState authState;
 }
 
@@ -35,4 +35,21 @@ class AuthState {
         isLoaded: isLoaded ?? this.user,
         isLoading: isLoading ?? this.isLoading);
   }
+
+  @override
+  int get hashCode =>
+      authorised.hashCode ^
+      user.hashCode ^
+      isLoading.hashCode ^
+      isLoaded.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is AuthState &&
+          runtimeType == other.runtimeType &&
+          authorised == other.authorised &&
+          user == other.user &&
+          isLoading == other.isLoading &&
+          isLoaded == other.isLoaded;
 }
